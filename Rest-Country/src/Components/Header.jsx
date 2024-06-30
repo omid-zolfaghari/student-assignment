@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div className="w-full shadow-lg flex items-center px-2 justify-between h-24">
-      <p>Where in the world?</p>
+      <h1 className="font-bold">Where in the world?</h1>
       <p className="cursor-pointer" onClick={handleDarkMode}>{dark ? "Light mode" : "Dark mode"}</p>
     </div>
   )
