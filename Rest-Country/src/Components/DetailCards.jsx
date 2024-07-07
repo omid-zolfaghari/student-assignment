@@ -1,5 +1,4 @@
 
-import NotFound from "../Pages/NotFound"
 import BorderCountry from "./BorderCountry"
 
 export default function DetailCards({data}) {
@@ -24,7 +23,8 @@ for (const money in data.currencies) {
 
         return (
             
-          <div className="container flex h-full  justify-center mx-auto w-full mt-10 md:mt-24 h-max">
+          <div className="container flex h-max mb-12 justify-center mx-auto w-full mt-10 md:mt-24">
+            <div className="container w-full h-max">
             <div className="w-full flex flex-col md:flex-row md:justify-evenly">
             <img className="md:h-60 rounded" src={data.flags.png} alt=""/>
             <div className="lg:w-48 px-3">
@@ -42,18 +42,19 @@ for (const money in data.currencies) {
             <p className="md:font-medium"><span className="font-semibold md:font-bold">Currencies : </span>{currency}</p>
             <p className="md:font-medium"><span className="font-semibold md:font-bold">Languages : </span>{Object.values(data.languages).join(" , ")}</p>
             </div>
-
             </div>
-            {data.border ? (
-            <div className="flex flex-col mt-6 gap-3">
-                 <p className="font-semibold">Border Countries : </p>
-                 <div className="flex justify-between">
-                    {data.border.map((item, i)=>{
+            {data.borders ? (
+            <div className="px-3 lg:w-80 container mx-auto mt-4">
+                 <p className="font-semibold md:font-bold">Border Countries : </p>
+                 <div className="flex flex-wrap gap-3">
+                    {data.borders.map((item, i)=>{
                         return <BorderCountry key={i} cca3={item}/>
                     })}
                  </div>
             </div>
             ) : null}
+            </div>
+            
           </div>
         )
 }

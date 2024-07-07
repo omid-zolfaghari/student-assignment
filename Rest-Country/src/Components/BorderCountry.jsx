@@ -17,7 +17,7 @@ export default function BorderCountry({cca3}) {
 
   return (
     <Link to={`/${cca3}`}>
-      <button className="py-1 px-8 rounded-sm shadow-lg hover:bg-gray-200 dark:hover:bg-[#1f282f]">{border[0].name.common}</button>
+      <button className="py-1 px-8 text-lg font-normal rounded-sm shadow-lg hover:bg-gray-200 dark:hover:bg-[#1f282f] hover:text-black">{border[0]?.name.common}</button>
     </Link>
   )
 }
